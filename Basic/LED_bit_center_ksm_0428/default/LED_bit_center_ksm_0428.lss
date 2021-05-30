@@ -1,0 +1,230 @@
+
+LED_bit_center_ksm_0428.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00000142  000001b6  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000142  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .stab         000006cc  00000000  00000000  000001b8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      00000085  00000000  00000000  00000884  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_aranges 00000080  00000000  00000000  00000910  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000042a  00000000  00000000  00000990  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 0000012d  00000000  00000000  00000dba  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000331  00000000  00000000  00000ee7  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000024  00000000  00000000  00001218  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000105  00000000  00000000  0000123c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000108  00000000  00000000  00001341  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000010  00000000  00000000  00001449  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+   8:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+   c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  10:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  14:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  18:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  1c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  20:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  24:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  28:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  2c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  30:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  34:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  38:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  3c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  40:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  44:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  48:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  4c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  50:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  54:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  58:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  5c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  60:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  64:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  68:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  6c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  70:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  74:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  78:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  7c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  80:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  84:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  88:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	e2 e4       	ldi	r30, 0x42	; 66
+  a0:	f1 e0       	ldi	r31, 0x01	; 1
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	a0 30       	cpi	r26, 0x00	; 0
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+  b2:	1b be       	out	0x3b, r1	; 59
+
+000000b4 <__do_clear_bss>:
+  b4:	11 e0       	ldi	r17, 0x01	; 1
+  b6:	a0 e0       	ldi	r26, 0x00	; 0
+  b8:	b1 e0       	ldi	r27, 0x01	; 1
+  ba:	01 c0       	rjmp	.+2      	; 0xbe <.do_clear_bss_start>
+
+000000bc <.do_clear_bss_loop>:
+  bc:	1d 92       	st	X+, r1
+
+000000be <.do_clear_bss_start>:
+  be:	a0 30       	cpi	r26, 0x00	; 0
+  c0:	b1 07       	cpc	r27, r17
+  c2:	e1 f7       	brne	.-8      	; 0xbc <.do_clear_bss_loop>
+  c4:	0e 94 68 00 	call	0xd0	; 0xd0 <main>
+  c8:	0c 94 9f 00 	jmp	0x13e	; 0x13e <_exit>
+
+000000cc <__bad_interrupt>:
+  cc:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000d0 <main>:
+#include <avr/io.h>
+#include <util/delay.h>
+
+int main (){
+	int i, led_R,led_L;
+	DDRA = 0xff;
+  d0:	8f ef       	ldi	r24, 0xFF	; 255
+  d2:	8a bb       	out	0x1a, r24	; 26
+  d4:	2d c0       	rjmp	.+90     	; 0x130 <main+0x60>
+	while(1){
+		led_R = 0x7f;
+		led_L = 0xfe;
+
+		for (i = 0; i < 3; i++){
+			PORTA = led_R & led_L;
+  d6:	62 2f       	mov	r22, r18
+  d8:	68 23       	and	r22, r24
+  da:	6b bb       	out	0x1b, r22	; 27
+			
+			led_R = (led_R >> 1) + 128;
+  dc:	95 95       	asr	r25
+  de:	87 95       	ror	r24
+  e0:	80 58       	subi	r24, 0x80	; 128
+  e2:	9f 4f       	sbci	r25, 0xFF	; 255
+			led_L = (led_L << 1) + 1;
+  e4:	22 0f       	add	r18, r18
+  e6:	33 1f       	adc	r19, r19
+  e8:	2f 5f       	subi	r18, 0xFF	; 255
+  ea:	3f 4f       	sbci	r19, 0xFF	; 255
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  ec:	4f ef       	ldi	r20, 0xFF	; 255
+  ee:	53 ed       	ldi	r21, 0xD3	; 211
+  f0:	60 e3       	ldi	r22, 0x30	; 48
+  f2:	41 50       	subi	r20, 0x01	; 1
+  f4:	50 40       	sbci	r21, 0x00	; 0
+  f6:	60 40       	sbci	r22, 0x00	; 0
+  f8:	e1 f7       	brne	.-8      	; 0xf2 <main+0x22>
+  fa:	00 c0       	rjmp	.+0      	; 0xfc <main+0x2c>
+  fc:	00 00       	nop
+	
+	while(1){
+		led_R = 0x7f;
+		led_L = 0xfe;
+
+		for (i = 0; i < 3; i++){
+  fe:	31 96       	adiw	r30, 0x01	; 1
+ 100:	e3 30       	cpi	r30, 0x03	; 3
+ 102:	f1 05       	cpc	r31, r1
+ 104:	44 f3       	brlt	.-48     	; 0xd6 <main+0x6>
+ 106:	e3 e0       	ldi	r30, 0x03	; 3
+ 108:	f0 e0       	ldi	r31, 0x00	; 0
+			led_L = (led_L << 1) + 1;
+			_delay_ms(1000);
+
+		}
+		for (i = 0; i < 3; i++){
+			PORTA = led_R & led_L;
+ 10a:	62 2f       	mov	r22, r18
+ 10c:	68 23       	and	r22, r24
+ 10e:	6b bb       	out	0x1b, r22	; 27
+			led_R = (led_R << 1) + 1;
+ 110:	88 0f       	add	r24, r24
+ 112:	99 1f       	adc	r25, r25
+ 114:	01 96       	adiw	r24, 0x01	; 1
+			led_L = (led_L >> 1);
+ 116:	35 95       	asr	r19
+ 118:	27 95       	ror	r18
+ 11a:	4f ef       	ldi	r20, 0xFF	; 255
+ 11c:	53 ed       	ldi	r21, 0xD3	; 211
+ 11e:	60 e3       	ldi	r22, 0x30	; 48
+ 120:	41 50       	subi	r20, 0x01	; 1
+ 122:	50 40       	sbci	r21, 0x00	; 0
+ 124:	60 40       	sbci	r22, 0x00	; 0
+ 126:	e1 f7       	brne	.-8      	; 0x120 <main+0x50>
+ 128:	00 c0       	rjmp	.+0      	; 0x12a <main+0x5a>
+ 12a:	00 00       	nop
+ 12c:	31 97       	sbiw	r30, 0x01	; 1
+			led_R = (led_R >> 1) + 128;
+			led_L = (led_L << 1) + 1;
+			_delay_ms(1000);
+
+		}
+		for (i = 0; i < 3; i++){
+ 12e:	69 f7       	brne	.-38     	; 0x10a <main+0x3a>
+	int i, led_R,led_L;
+	DDRA = 0xff;
+	
+	while(1){
+		led_R = 0x7f;
+		led_L = 0xfe;
+ 130:	2e ef       	ldi	r18, 0xFE	; 254
+ 132:	30 e0       	ldi	r19, 0x00	; 0
+int main (){
+	int i, led_R,led_L;
+	DDRA = 0xff;
+	
+	while(1){
+		led_R = 0x7f;
+ 134:	8f e7       	ldi	r24, 0x7F	; 127
+ 136:	90 e0       	ldi	r25, 0x00	; 0
+		led_L = 0xfe;
+
+		for (i = 0; i < 3; i++){
+ 138:	e0 e0       	ldi	r30, 0x00	; 0
+ 13a:	f0 e0       	ldi	r31, 0x00	; 0
+ 13c:	e1 cf       	rjmp	.-62     	; 0x100 <main+0x30>
+
+0000013e <_exit>:
+ 13e:	f8 94       	cli
+
+00000140 <__stop_program>:
+ 140:	ff cf       	rjmp	.-2      	; 0x140 <__stop_program>

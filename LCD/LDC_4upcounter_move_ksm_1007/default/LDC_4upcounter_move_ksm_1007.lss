@@ -1,0 +1,548 @@
+
+LDC_4upcounter_move_ksm_1007.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000006  00800100  00000388  0000041c  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000388  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000004  00800106  00800106  00000422  2**0
+                  ALLOC
+  3 .stab         000006cc  00000000  00000000  00000424  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      00000085  00000000  00000000  00000af0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_aranges 000000c8  00000000  00000000  00000b78  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00000818  00000000  00000000  00000c40  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 000001e6  00000000  00000000  00001458  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   000004b6  00000000  00000000  0000163e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  000000a4  00000000  00000000  00001af4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    0000014c  00000000  00000000  00001b98  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    0000012c  00000000  00000000  00001ce4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000018  00000000  00000000  00001e10  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+   8:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+   c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  10:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  14:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  18:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  1c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  20:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  24:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  28:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  2c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  30:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  34:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  38:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  3c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  40:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  44:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  48:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  4c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  50:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  54:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  58:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  5c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  60:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  64:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  68:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  6c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  70:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  74:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  78:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  7c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  80:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  84:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  88:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	e8 e8       	ldi	r30, 0x88	; 136
+  a0:	f3 e0       	ldi	r31, 0x03	; 3
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	a6 30       	cpi	r26, 0x06	; 6
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+  b2:	1b be       	out	0x3b, r1	; 59
+
+000000b4 <__do_clear_bss>:
+  b4:	11 e0       	ldi	r17, 0x01	; 1
+  b6:	a6 e0       	ldi	r26, 0x06	; 6
+  b8:	b1 e0       	ldi	r27, 0x01	; 1
+  ba:	01 c0       	rjmp	.+2      	; 0xbe <.do_clear_bss_start>
+
+000000bc <.do_clear_bss_loop>:
+  bc:	1d 92       	st	X+, r1
+
+000000be <.do_clear_bss_start>:
+  be:	aa 30       	cpi	r26, 0x0A	; 10
+  c0:	b1 07       	cpc	r27, r17
+  c2:	e1 f7       	brne	.-8      	; 0xbc <.do_clear_bss_loop>
+  c4:	0e 94 e1 00 	call	0x1c2	; 0x1c2 <main>
+  c8:	0c 94 c2 01 	jmp	0x384	; 0x384 <_exit>
+
+000000cc <__bad_interrupt>:
+  cc:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000d0 <COMMAND>:
+
+long count = 0;
+
+void COMMAND(unsigned char byte)
+{
+    PORTG = 0xFC;      //PORTG에 RS, RW, E 가 연결되어 있다.
+  d0:	e5 e6       	ldi	r30, 0x65	; 101
+  d2:	f0 e0       	ldi	r31, 0x00	; 0
+  d4:	9c ef       	ldi	r25, 0xFC	; 252
+  d6:	90 83       	st	Z, r25
+    PORTC = byte;           //PORTC에 데이터버스가 연결되어 있다.
+  d8:	85 bb       	out	0x15, r24	; 21
+    PORTG ^= 0x04;     //E 신호를 H->L로 하기 위해
+  da:	80 81       	ld	r24, Z
+  dc:	94 e0       	ldi	r25, 0x04	; 4
+  de:	89 27       	eor	r24, r25
+  e0:	80 83       	st	Z, r24
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  e2:	8f e3       	ldi	r24, 0x3F	; 63
+  e4:	9f e1       	ldi	r25, 0x1F	; 31
+  e6:	01 97       	sbiw	r24, 0x01	; 1
+  e8:	f1 f7       	brne	.-4      	; 0xe6 <COMMAND+0x16>
+  ea:	00 c0       	rjmp	.+0      	; 0xec <COMMAND+0x1c>
+  ec:	00 00       	nop
+    _delay_ms(2);      //LCD 내부 동작시간
+}
+  ee:	08 95       	ret
+
+000000f0 <DATA>:
+
+void DATA(unsigned char byte)
+{
+    PORTG = 0xFD;        //PORTG에 RS, RW, E 가 연결되어 있다.
+  f0:	e5 e6       	ldi	r30, 0x65	; 101
+  f2:	f0 e0       	ldi	r31, 0x00	; 0
+  f4:	9d ef       	ldi	r25, 0xFD	; 253
+  f6:	90 83       	st	Z, r25
+    PORTC = byte;      //PORTC에 데이터버스가 연결되어 있다.
+  f8:	85 bb       	out	0x15, r24	; 21
+    PORTG ^= 0x04;      //E 신호를 H->L로 하기 위해
+  fa:	80 81       	ld	r24, Z
+  fc:	94 e0       	ldi	r25, 0x04	; 4
+  fe:	89 27       	eor	r24, r25
+ 100:	80 83       	st	Z, r24
+ 102:	8f e3       	ldi	r24, 0x3F	; 63
+ 104:	9f e1       	ldi	r25, 0x1F	; 31
+ 106:	01 97       	sbiw	r24, 0x01	; 1
+ 108:	f1 f7       	brne	.-4      	; 0x106 <DATA+0x16>
+ 10a:	00 c0       	rjmp	.+0      	; 0x10c <DATA+0x1c>
+ 10c:	00 00       	nop
+    _delay_ms(2);       //LCD 내부 동작시간
+}
+ 10e:	08 95       	ret
+
+00000110 <init_system>:
+
+void init_system(void)
+{
+     DDRC = 0xFF;     //LCD 데이터 버스
+ 110:	8f ef       	ldi	r24, 0xFF	; 255
+ 112:	84 bb       	out	0x14, r24	; 20
+     PORTC = 0xFF;
+ 114:	85 bb       	out	0x15, r24	; 21
+     DDRG = 0xFF;     //LCD 컨트롤 신호(PG2=LCD_EN, PG1=RW, PG0=RS)
+ 116:	80 93 64 00 	sts	0x0064, r24
+     PORTG = 0xFF;
+ 11a:	80 93 65 00 	sts	0x0065, r24
+}
+ 11e:	08 95       	ret
+
+00000120 <init_LCD>:
+ 120:	8f e5       	ldi	r24, 0x5F	; 95
+ 122:	9a ee       	ldi	r25, 0xEA	; 234
+ 124:	01 97       	sbiw	r24, 0x01	; 1
+ 126:	f1 f7       	brne	.-4      	; 0x124 <init_LCD+0x4>
+ 128:	00 c0       	rjmp	.+0      	; 0x12a <init_LCD+0xa>
+ 12a:	00 00       	nop
+
+void init_LCD(void)
+{
+       _delay_ms(15);            //15msec 이상 시간지연
+       COMMAND(0x38);         //Function set, 기능셋(데이터버스 8비트, 라인수:2줄)
+ 12c:	88 e3       	ldi	r24, 0x38	; 56
+ 12e:	0e 94 68 00 	call	0xd0	; 0xd0 <COMMAND>
+ 132:	8f e1       	ldi	r24, 0x1F	; 31
+ 134:	9e e4       	ldi	r25, 0x4E	; 78
+ 136:	01 97       	sbiw	r24, 0x01	; 1
+ 138:	f1 f7       	brne	.-4      	; 0x136 <init_LCD+0x16>
+ 13a:	00 c0       	rjmp	.+0      	; 0x13c <init_LCD+0x1c>
+ 13c:	00 00       	nop
+       _delay_ms(5);                //4.1msec 이상 시간지연, 생략가능
+       COMMAND(0x38);         //기능셋, 생략 가능
+ 13e:	88 e3       	ldi	r24, 0x38	; 56
+ 140:	0e 94 68 00 	call	0xd0	; 0xd0 <COMMAND>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 144:	8f e8       	ldi	r24, 0x8F	; 143
+ 146:	91 e0       	ldi	r25, 0x01	; 1
+ 148:	01 97       	sbiw	r24, 0x01	; 1
+ 14a:	f1 f7       	brne	.-4      	; 0x148 <init_LCD+0x28>
+ 14c:	00 c0       	rjmp	.+0      	; 0x14e <init_LCD+0x2e>
+ 14e:	00 00       	nop
+       _delay_us(100);              //100usec 이상 시간지연, 생략가능
+       COMMAND(0x38);          //기능셋, 생략 가능
+ 150:	88 e3       	ldi	r24, 0x38	; 56
+ 152:	0e 94 68 00 	call	0xd0	; 0xd0 <COMMAND>
+       COMMAND(0x08);          //표시 Off , 생략 가능
+ 156:	88 e0       	ldi	r24, 0x08	; 8
+ 158:	0e 94 68 00 	call	0xd0	; 0xd0 <COMMAND>
+       COMMAND(0x01);         //화면 지우기
+ 15c:	81 e0       	ldi	r24, 0x01	; 1
+ 15e:	0e 94 68 00 	call	0xd0	; 0xd0 <COMMAND>
+       COMMAND(0x06);        //엔트리모드셋
+ 162:	86 e0       	ldi	r24, 0x06	; 6
+ 164:	0e 94 68 00 	call	0xd0	; 0xd0 <COMMAND>
+       COMMAND(0x0C);         //표시 on
+ 168:	8c e0       	ldi	r24, 0x0C	; 12
+ 16a:	0e 94 68 00 	call	0xd0	; 0xd0 <COMMAND>
+}
+ 16e:	08 95       	ret
+
+00000170 <STRING>:
+
+void STRING(unsigned char font[], unsigned char n)
+{
+ 170:	ef 92       	push	r14
+ 172:	ff 92       	push	r15
+ 174:	1f 93       	push	r17
+ 176:	cf 93       	push	r28
+ 178:	df 93       	push	r29
+ 17a:	0f 92       	push	r0
+ 17c:	cd b7       	in	r28, 0x3d	; 61
+ 17e:	de b7       	in	r29, 0x3e	; 62
+ 180:	18 2f       	mov	r17, r24
+	 unsigned char i;
+	 for(i=0 ; i<n ; i++)
+ 182:	e8 2e       	mov	r14, r24
+ 184:	f9 2e       	mov	r15, r25
+ 186:	07 c0       	rjmp	.+14     	; 0x196 <STRING+0x26>
+	     {
+	          DATA(font[i]);
+ 188:	f7 01       	movw	r30, r14
+ 18a:	81 91       	ld	r24, Z+
+ 18c:	7f 01       	movw	r14, r30
+ 18e:	69 83       	std	Y+1, r22	; 0x01
+ 190:	0e 94 78 00 	call	0xf0	; 0xf0 <DATA>
+ 194:	69 81       	ldd	r22, Y+1	; 0x01
+}
+
+void STRING(unsigned char font[], unsigned char n)
+{
+	 unsigned char i;
+	 for(i=0 ; i<n ; i++)
+ 196:	8e 2d       	mov	r24, r14
+ 198:	81 1b       	sub	r24, r17
+ 19a:	86 17       	cp	r24, r22
+ 19c:	a8 f3       	brcs	.-22     	; 0x188 <STRING+0x18>
+	     {
+	          DATA(font[i]);
+	     }
+}
+ 19e:	0f 90       	pop	r0
+ 1a0:	df 91       	pop	r29
+ 1a2:	cf 91       	pop	r28
+ 1a4:	1f 91       	pop	r17
+ 1a6:	ff 90       	pop	r15
+ 1a8:	ef 90       	pop	r14
+ 1aa:	08 95       	ret
+
+000001ac <MOVE>:
+
+void MOVE(int y, int x)     //커서 이동
+{               
+	 if(y==1)  
+ 1ac:	81 30       	cpi	r24, 0x01	; 1
+ 1ae:	91 05       	cpc	r25, r1
+ 1b0:	19 f4       	brne	.+6      	; 0x1b8 <MOVE+0xc>
+	  COMMAND(0x80+x-1);  //1행
+ 1b2:	86 2f       	mov	r24, r22
+ 1b4:	81 58       	subi	r24, 0x81	; 129
+ 1b6:	02 c0       	rjmp	.+4      	; 0x1bc <MOVE+0x10>
+	 else      
+	  COMMAND(0xc0+x-1);  //2행
+ 1b8:	86 2f       	mov	r24, r22
+ 1ba:	81 54       	subi	r24, 0x41	; 65
+ 1bc:	0e 94 68 00 	call	0xd0	; 0xd0 <COMMAND>
+ 1c0:	08 95       	ret
+
+000001c2 <main>:
+}
+
+int main(){
+	
+	init_system();
+ 1c2:	0e 94 88 00 	call	0x110	; 0x110 <init_system>
+	init_LCD();
+ 1c6:	0e 94 90 00 	call	0x120	; 0x120 <init_LCD>
+	
+	MOVE(1,7);
+ 1ca:	81 e0       	ldi	r24, 0x01	; 1
+ 1cc:	90 e0       	ldi	r25, 0x00	; 0
+ 1ce:	67 e0       	ldi	r22, 0x07	; 7
+ 1d0:	70 e0       	ldi	r23, 0x00	; 0
+ 1d2:	0e 94 d6 00 	call	0x1ac	; 0x1ac <MOVE>
+	STRING("0000",4);
+ 1d6:	80 e0       	ldi	r24, 0x00	; 0
+ 1d8:	91 e0       	ldi	r25, 0x01	; 1
+ 1da:	64 e0       	ldi	r22, 0x04	; 4
+ 1dc:	0e 94 b8 00 	call	0x170	; 0x170 <STRING>
+
+	while(1){	
+
+		MOVE(1,7);
+		DATA((count/1000)%10+0x30);
+ 1e0:	28 ee       	ldi	r18, 0xE8	; 232
+ 1e2:	82 2e       	mov	r8, r18
+ 1e4:	23 e0       	ldi	r18, 0x03	; 3
+ 1e6:	92 2e       	mov	r9, r18
+ 1e8:	a1 2c       	mov	r10, r1
+ 1ea:	b1 2c       	mov	r11, r1
+ 1ec:	3a e0       	ldi	r19, 0x0A	; 10
+ 1ee:	c3 2e       	mov	r12, r19
+ 1f0:	d1 2c       	mov	r13, r1
+ 1f2:	e1 2c       	mov	r14, r1
+ 1f4:	f1 2c       	mov	r15, r1
+		DATA((count/100)%10+0x30);
+ 1f6:	44 e6       	ldi	r20, 0x64	; 100
+ 1f8:	44 2e       	mov	r4, r20
+ 1fa:	51 2c       	mov	r5, r1
+ 1fc:	61 2c       	mov	r6, r1
+ 1fe:	71 2c       	mov	r7, r1
+	MOVE(1,7);
+	STRING("0000",4);
+
+	while(1){	
+
+		MOVE(1,7);
+ 200:	81 e0       	ldi	r24, 0x01	; 1
+ 202:	90 e0       	ldi	r25, 0x00	; 0
+ 204:	67 e0       	ldi	r22, 0x07	; 7
+ 206:	70 e0       	ldi	r23, 0x00	; 0
+ 208:	0e 94 d6 00 	call	0x1ac	; 0x1ac <MOVE>
+		DATA((count/1000)%10+0x30);
+ 20c:	60 91 06 01 	lds	r22, 0x0106
+ 210:	70 91 07 01 	lds	r23, 0x0107
+ 214:	80 91 08 01 	lds	r24, 0x0108
+ 218:	90 91 09 01 	lds	r25, 0x0109
+ 21c:	a5 01       	movw	r20, r10
+ 21e:	94 01       	movw	r18, r8
+ 220:	0e 94 85 01 	call	0x30a	; 0x30a <__divmodsi4>
+ 224:	ca 01       	movw	r24, r20
+ 226:	b9 01       	movw	r22, r18
+ 228:	a7 01       	movw	r20, r14
+ 22a:	96 01       	movw	r18, r12
+ 22c:	0e 94 85 01 	call	0x30a	; 0x30a <__divmodsi4>
+ 230:	86 2f       	mov	r24, r22
+ 232:	80 5d       	subi	r24, 0xD0	; 208
+ 234:	0e 94 78 00 	call	0xf0	; 0xf0 <DATA>
+		DATA((count/100)%10+0x30);
+ 238:	60 91 06 01 	lds	r22, 0x0106
+ 23c:	70 91 07 01 	lds	r23, 0x0107
+ 240:	80 91 08 01 	lds	r24, 0x0108
+ 244:	90 91 09 01 	lds	r25, 0x0109
+ 248:	a3 01       	movw	r20, r6
+ 24a:	92 01       	movw	r18, r4
+ 24c:	0e 94 85 01 	call	0x30a	; 0x30a <__divmodsi4>
+ 250:	ca 01       	movw	r24, r20
+ 252:	b9 01       	movw	r22, r18
+ 254:	a7 01       	movw	r20, r14
+ 256:	96 01       	movw	r18, r12
+ 258:	0e 94 85 01 	call	0x30a	; 0x30a <__divmodsi4>
+ 25c:	86 2f       	mov	r24, r22
+ 25e:	80 5d       	subi	r24, 0xD0	; 208
+ 260:	0e 94 78 00 	call	0xf0	; 0xf0 <DATA>
+		DATA((count/10)%10+0x30);
+ 264:	60 91 06 01 	lds	r22, 0x0106
+ 268:	70 91 07 01 	lds	r23, 0x0107
+ 26c:	80 91 08 01 	lds	r24, 0x0108
+ 270:	90 91 09 01 	lds	r25, 0x0109
+ 274:	a7 01       	movw	r20, r14
+ 276:	96 01       	movw	r18, r12
+ 278:	0e 94 85 01 	call	0x30a	; 0x30a <__divmodsi4>
+ 27c:	ca 01       	movw	r24, r20
+ 27e:	b9 01       	movw	r22, r18
+ 280:	a7 01       	movw	r20, r14
+ 282:	96 01       	movw	r18, r12
+ 284:	0e 94 85 01 	call	0x30a	; 0x30a <__divmodsi4>
+ 288:	86 2f       	mov	r24, r22
+ 28a:	80 5d       	subi	r24, 0xD0	; 208
+ 28c:	0e 94 78 00 	call	0xf0	; 0xf0 <DATA>
+		DATA(count%10+0x30);
+ 290:	60 91 06 01 	lds	r22, 0x0106
+ 294:	70 91 07 01 	lds	r23, 0x0107
+ 298:	80 91 08 01 	lds	r24, 0x0108
+ 29c:	90 91 09 01 	lds	r25, 0x0109
+ 2a0:	a7 01       	movw	r20, r14
+ 2a2:	96 01       	movw	r18, r12
+ 2a4:	0e 94 85 01 	call	0x30a	; 0x30a <__divmodsi4>
+ 2a8:	86 2f       	mov	r24, r22
+ 2aa:	80 5d       	subi	r24, 0xD0	; 208
+ 2ac:	0e 94 78 00 	call	0xf0	; 0xf0 <DATA>
+		
+		count++;
+ 2b0:	80 91 06 01 	lds	r24, 0x0106
+ 2b4:	90 91 07 01 	lds	r25, 0x0107
+ 2b8:	a0 91 08 01 	lds	r26, 0x0108
+ 2bc:	b0 91 09 01 	lds	r27, 0x0109
+ 2c0:	01 96       	adiw	r24, 0x01	; 1
+ 2c2:	a1 1d       	adc	r26, r1
+ 2c4:	b1 1d       	adc	r27, r1
+ 2c6:	80 93 06 01 	sts	0x0106, r24
+ 2ca:	90 93 07 01 	sts	0x0107, r25
+ 2ce:	a0 93 08 01 	sts	0x0108, r26
+ 2d2:	b0 93 09 01 	sts	0x0109, r27
+		if (count >= 10000) count = 0;
+ 2d6:	80 31       	cpi	r24, 0x10	; 16
+ 2d8:	27 e2       	ldi	r18, 0x27	; 39
+ 2da:	92 07       	cpc	r25, r18
+ 2dc:	20 e0       	ldi	r18, 0x00	; 0
+ 2de:	a2 07       	cpc	r26, r18
+ 2e0:	20 e0       	ldi	r18, 0x00	; 0
+ 2e2:	b2 07       	cpc	r27, r18
+ 2e4:	44 f0       	brlt	.+16     	; 0x2f6 <main+0x134>
+ 2e6:	10 92 06 01 	sts	0x0106, r1
+ 2ea:	10 92 07 01 	sts	0x0107, r1
+ 2ee:	10 92 08 01 	sts	0x0108, r1
+ 2f2:	10 92 09 01 	sts	0x0109, r1
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 2f6:	8f ef       	ldi	r24, 0xFF	; 255
+ 2f8:	91 ee       	ldi	r25, 0xE1	; 225
+ 2fa:	a4 e0       	ldi	r26, 0x04	; 4
+ 2fc:	81 50       	subi	r24, 0x01	; 1
+ 2fe:	90 40       	sbci	r25, 0x00	; 0
+ 300:	a0 40       	sbci	r26, 0x00	; 0
+ 302:	e1 f7       	brne	.-8      	; 0x2fc <main+0x13a>
+ 304:	00 c0       	rjmp	.+0      	; 0x306 <main+0x144>
+ 306:	00 00       	nop
+ 308:	7b cf       	rjmp	.-266    	; 0x200 <main+0x3e>
+
+0000030a <__divmodsi4>:
+ 30a:	97 fb       	bst	r25, 7
+ 30c:	09 2e       	mov	r0, r25
+ 30e:	05 26       	eor	r0, r21
+ 310:	0e d0       	rcall	.+28     	; 0x32e <__divmodsi4_neg1>
+ 312:	57 fd       	sbrc	r21, 7
+ 314:	04 d0       	rcall	.+8      	; 0x31e <__divmodsi4_neg2>
+ 316:	14 d0       	rcall	.+40     	; 0x340 <__udivmodsi4>
+ 318:	0a d0       	rcall	.+20     	; 0x32e <__divmodsi4_neg1>
+ 31a:	00 1c       	adc	r0, r0
+ 31c:	38 f4       	brcc	.+14     	; 0x32c <__divmodsi4_exit>
+
+0000031e <__divmodsi4_neg2>:
+ 31e:	50 95       	com	r21
+ 320:	40 95       	com	r20
+ 322:	30 95       	com	r19
+ 324:	21 95       	neg	r18
+ 326:	3f 4f       	sbci	r19, 0xFF	; 255
+ 328:	4f 4f       	sbci	r20, 0xFF	; 255
+ 32a:	5f 4f       	sbci	r21, 0xFF	; 255
+
+0000032c <__divmodsi4_exit>:
+ 32c:	08 95       	ret
+
+0000032e <__divmodsi4_neg1>:
+ 32e:	f6 f7       	brtc	.-4      	; 0x32c <__divmodsi4_exit>
+ 330:	90 95       	com	r25
+ 332:	80 95       	com	r24
+ 334:	70 95       	com	r23
+ 336:	61 95       	neg	r22
+ 338:	7f 4f       	sbci	r23, 0xFF	; 255
+ 33a:	8f 4f       	sbci	r24, 0xFF	; 255
+ 33c:	9f 4f       	sbci	r25, 0xFF	; 255
+ 33e:	08 95       	ret
+
+00000340 <__udivmodsi4>:
+ 340:	a1 e2       	ldi	r26, 0x21	; 33
+ 342:	1a 2e       	mov	r1, r26
+ 344:	aa 1b       	sub	r26, r26
+ 346:	bb 1b       	sub	r27, r27
+ 348:	fd 01       	movw	r30, r26
+ 34a:	0d c0       	rjmp	.+26     	; 0x366 <__udivmodsi4_ep>
+
+0000034c <__udivmodsi4_loop>:
+ 34c:	aa 1f       	adc	r26, r26
+ 34e:	bb 1f       	adc	r27, r27
+ 350:	ee 1f       	adc	r30, r30
+ 352:	ff 1f       	adc	r31, r31
+ 354:	a2 17       	cp	r26, r18
+ 356:	b3 07       	cpc	r27, r19
+ 358:	e4 07       	cpc	r30, r20
+ 35a:	f5 07       	cpc	r31, r21
+ 35c:	20 f0       	brcs	.+8      	; 0x366 <__udivmodsi4_ep>
+ 35e:	a2 1b       	sub	r26, r18
+ 360:	b3 0b       	sbc	r27, r19
+ 362:	e4 0b       	sbc	r30, r20
+ 364:	f5 0b       	sbc	r31, r21
+
+00000366 <__udivmodsi4_ep>:
+ 366:	66 1f       	adc	r22, r22
+ 368:	77 1f       	adc	r23, r23
+ 36a:	88 1f       	adc	r24, r24
+ 36c:	99 1f       	adc	r25, r25
+ 36e:	1a 94       	dec	r1
+ 370:	69 f7       	brne	.-38     	; 0x34c <__udivmodsi4_loop>
+ 372:	60 95       	com	r22
+ 374:	70 95       	com	r23
+ 376:	80 95       	com	r24
+ 378:	90 95       	com	r25
+ 37a:	9b 01       	movw	r18, r22
+ 37c:	ac 01       	movw	r20, r24
+ 37e:	bd 01       	movw	r22, r26
+ 380:	cf 01       	movw	r24, r30
+ 382:	08 95       	ret
+
+00000384 <_exit>:
+ 384:	f8 94       	cli
+
+00000386 <__stop_program>:
+ 386:	ff cf       	rjmp	.-2      	; 0x386 <__stop_program>
